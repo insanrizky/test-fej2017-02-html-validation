@@ -20,16 +20,40 @@
                 <option>Mrs.</option>
             </select>
             <br />
-            <label for="fullnameInput">Name:</label> <input id="fullnameInput" type="text" /><br />
-            <label>Sex:</label>
-            <label><input id="sexMaleRadio" name="sex" type="radio" value="f" />&nbsp;Female</label>
-            &nbsp;
-            <label><input id="sexMaleRadio" name="sex" type="radio" value="m" />&nbsp;Male</label>
+            <label for="fullnameInput">Name:</label> 
+                <input id="fullnameInput" type="text" 
+                    required 
+                    pattern="[A-Za-z ]{10,}" 
+                    title="Only alphabet and space are allowed. Minimum Length is 10"/>
             <br />
-            <label for="emailInput">Email:</label> <input id="emailInput" type="text" required /><br />
-            <label for="phoneInput">Phone:</label> <input id="phoneInput" type="text" /><br />
-            <label for="addressInput">Address:</label> <input id="addressInput" type="text" /><br />
-            <label for="zipcodeInput">ZIP Code:</label> <input id="zipcodeInput" type="text" /><br />
+            <label>Sex:</label>
+            <label><input id="sexMaleRadio" name="sex" type="radio" value="f" required/>&nbsp;Female</label>
+            &nbsp;
+            <label><input id="sexMaleRadio" name="sex" type="radio" value="m" required/>&nbsp;Male</label>
+            <br />
+            <label for="emailInput">Email:</label> 
+                <input id="emailInput" type="email" 
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                    title="Must contains email format"
+                    required/>
+            <br />
+            <label for="phoneInput">Phone:</label> 
+                <input id="phoneInput" type="text" 
+                    required
+                    pattern="[\+0-9]{1,20}"
+                    title="Only numbers are allowed. Max Length is 20"/>
+            <br />
+            <label for="addressInput">Address:</label> 
+                <input id="addressInput" type="text" 
+                    pattern="{1,200}" 
+                    title="Max length is 200 characters"/>
+            <br />
+            <label for="zipcodeInput">ZIP Code:</label> 
+                <input id="zipcodeInput" type="text" 
+                    required 
+                    pattern="[A-Z0-9\-]{1,10}" 
+                    title="Only alphabet and numbers are allowed. Max length is 10 characters"/>
+            <br />
         </fieldset>
         <fieldset>
             <input type="submit" id="validateButton" value="Validate!" />
